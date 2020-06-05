@@ -1,1 +1,1 @@
-export { Person, IPerson, } from "./person/Person";
+export { count, } from "./count";
