@@ -51,6 +51,12 @@ count(3).map<string>(i => items.push(i.toString()));
 // items is now ['0', '1', '2']
 ```
 
+You can `map` with `step` in the same way as with `for`.
+
+You can `break` in the same way as with `for`.
+
+# countFromTo
+
 Similarly, we have and the  `countFromTo`
 
 - `for`
@@ -65,21 +71,17 @@ countFromTo(10, 13).map(i => items.push(i));
 // items is now [10, 11, 12]
 ```
 
-You can `map` with `step` in the same way as with `for`.
-
-You can `break` in the same way as with `for`.
-
 # Import
 
 `import {count, countFromTo} from "dyna-count";`
 
 # Signatures
 
-`count(countTo: number).for: (cb: (index: number) => void): void`
+`count(countTo: number).for: (cb: (index: number, cbBreak: () => void) => void): void`
 
-`count(countTo: number).map: <T>(cb: (index: number) => T): T[]`
+`count(countTo: number).map: <T>(cb: (index: number, cbBreak: () => void) => T): T[]`
 
-`countFromTo(from: number, to: number).for: (cb: (index: number) => void): void`
+`countFromTo(from: number, to: number).for: (cb: (index: number, cbBreak: () => void) => void): void`
 
-`countFromTo(from: number, to: number).map: <T>(cb: (index: number) => T): T[]`
+`countFromTo(from: number, to: number).map: <T>(cb: (index: number, cbBreak: () => void) => T): T[]`
 

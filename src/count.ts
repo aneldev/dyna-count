@@ -1,6 +1,6 @@
 export const countFromTo = (from: number, to: number, step = 1) => {
   return {
-    for: (cb: (index: number, cbBreak: any) => void): void => {
+    for: (cb: (index: number, cbBreak: () => void) => void): void => {
       for (let index = from; index < to; index += step) {
         let shouldBreak = false;
         const cbBreak = () => shouldBreak = true;
