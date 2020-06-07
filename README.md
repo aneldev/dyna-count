@@ -1,8 +1,10 @@
-# About count & countFromTo
+# About dyna-count
 
 Simplifies the `for` loop.
 
 It also offers a `map`.
+
+# for
 
 Instead of
 
@@ -15,6 +17,23 @@ you can
 or simpler
 
 `count(1000).for(console.log)`
+
+You can `for` with step
+
+`count(10, 2).for(index => console.log(index))` // consoles: 0, 2, 4, 6, 8
+
+You can `break` a `for`, calling the 2nd argument of the `for`'s callback
+
+```
+let collected = [];
+count(20).for((index, breakIt) => {
+    collected.push(index);
+    if (index === 9) breakIt();
+});
+// 0..9 items are only collected
+```
+
+# map
 
 You can `map` also the iteration, useful for data generation.
 
@@ -45,6 +64,10 @@ let items = [];
 countFromTo(10, 13).map(i => items.push(i));
 // items is now [10, 11, 12]
 ```
+
+You can `map` with `step` in the same way as with `for`.
+
+You can `break` in the same way as with `for`.
 
 # Import
 

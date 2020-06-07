@@ -12,6 +12,21 @@ describe('count', () => {
     expect(collected).toMatchSnapshot();
   });
 
+  test('count.for with step', () => {
+    const collected: number[] = [];
+    count(10, 2).for(index => collected.push(index));
+    expect(collected).toMatchSnapshot();
+  });
+
+  test('count.for with break', () => {
+    const collected: number[] = [];
+    count(20).for((index, breakIt) => {
+      collected.push(index);
+      if (index === 9) breakIt();
+    });
+    expect(collected.length).toBe(10);
+  });
+
   test('count.map', () => {
     const mapped = count(20).map<number>(index => 2000 + index);
     expect(mapped).toMatchSnapshot();

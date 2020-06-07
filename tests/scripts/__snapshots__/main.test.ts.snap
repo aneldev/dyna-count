@@ -25,6 +25,16 @@ Array [
 ]
 `;
 
+exports[`count count.for with step 1`] = `
+Array [
+  0,
+  2,
+  4,
+  6,
+  8,
+]
+`;
+
 exports[`count count.map 1`] = `
 Array [
   2000,
