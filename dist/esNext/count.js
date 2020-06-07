@@ -1,8 +1,19 @@
-export var countFromTo = function (from, to) {
+export var countFromTo = function (from, to, step) {
+    if (step === void 0) { step = 1; }
     return {
         for: function (cb) {
-            for (var index = from; index < to; index++)
-                cb(index);
+            var _loop_1 = function (index) {
+                var shouldBreak = false;
+                var cbBreak = function () { return shouldBreak = true; };
+                cb(index, cbBreak);
+                if (shouldBreak)
+                    return "break";
+            };
+            for (var index = from; index < to; index += step) {
+                var state_1 = _loop_1(index);
+                if (state_1 === "break")
+                    break;
+            }
         },
         map: function (cb) {
             var output = [];
@@ -11,5 +22,8 @@ export var countFromTo = function (from, to) {
         },
     };
 };
-export var count = function (countTo) { return countFromTo(0, countTo); };
+export var count = function (countTo, step) {
+    if (step === void 0) { step = 1; }
+    return countFromTo(0, countTo, step);
+};
 //# sourceMappingURL=count.js.map
