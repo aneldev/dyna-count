@@ -71,6 +71,16 @@ countFromTo(10, 13).map(i => items.push(i));
 // items is now [10, 11, 12]
 ```
 
+# reduce
+
+```
+reduced = count(3).reduce>((acc, index) => {
+  acc[`key-${index}`] = `Key is ${index}`;
+  return acc;
+}, {});
+// reduced is equal to {"key-0": "Key is 0", "key-1": "Key is 1", "key-2": "Key is 2" }
+```
+
 # Import
 
 `import {count, countFromTo} from "dyna-count";`

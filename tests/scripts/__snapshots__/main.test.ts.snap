@@ -74,3 +74,18 @@ Array [
   2019,
 ]
 `;
+
+exports[`count reduce 1`] = `
+Object {
+  "key-0": "Key is 0",
+  "key-1": "Key is 1",
+  "key-2": "Key is 2",
+  "key-3": "Key is 3",
+  "key-4": "Key is 4",
+  "key-5": "Key is 5",
+  "key-6": "Key is 6",
+  "key-7": "Key is 7",
+  "key-8": "Key is 8",
+  "key-9": "Key is 9",
+}
+`;

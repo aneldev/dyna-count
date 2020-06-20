@@ -36,4 +36,12 @@ describe('count', () => {
     const mapped = countFromTo(10, 20).map<number>(index => 2000 + index);
     expect(mapped).toMatchSnapshot();
   });
+
+  test('reduce', () => {
+    const reduced = count(10).reduce<{ [key: string]: string }>((acc, index) => {
+      acc[`key-${index}`] = `Key is ${index}`;
+      return acc;
+    }, {});
+    expect(reduced).toMatchSnapshot();
+  });
 });

@@ -13,6 +13,11 @@ export const countFromTo = (from: number, to: number, step = 1) => {
       countFromTo(from, to).for(index => output.push(cb(index)));
       return output;
     },
+    reduce: <T = any>(cb: (acc: T, index: number) => T, initialValue: T): T => {
+      let output: T = initialValue;
+      countFromTo(from, to).for(index => output = cb(output, index));
+      return output;
+    },
   };
 };
 
