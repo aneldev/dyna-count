@@ -23,6 +23,11 @@ exports.countFromTo = function (from, to, step) {
             exports.countFromTo(from, to).for(function (index) { return output.push(cb(index)); });
             return output;
         },
+        reduce: function (cb, initialValue) {
+            var output = initialValue;
+            exports.countFromTo(from, to).for(function (index) { return output = cb(output, index); });
+            return output;
+        },
     };
 };
 exports.count = function (countTo, step) {

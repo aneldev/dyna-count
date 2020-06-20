@@ -20,6 +20,11 @@ export var countFromTo = function (from, to, step) {
             countFromTo(from, to).for(function (index) { return output.push(cb(index)); });
             return output;
         },
+        reduce: function (cb, initialValue) {
+            var output = initialValue;
+            countFromTo(from, to).for(function (index) { return output = cb(output, index); });
+            return output;
+        },
     };
 };
 export var count = function (countTo, step) {
