@@ -87,11 +87,8 @@ reduced = count(3).reduce>((acc, index) => {
 
 # Signatures
 
-`count(countTo: number).for: (cb: (index: number, cbBreak: () => void) => void): void`
+`count/countFromTo(countTo: number).for: (cb: (index: number, cbBreak: () => void) => void): void`
 
-`count(countTo: number).map: <T>(cb: (index: number, cbBreak: () => void) => T): T[]`
+`count/countFromTo(countTo: number).map: <T>(cb: (index: number, cbBreak: () => void) => T): T[]`
 
-`countFromTo(from: number, to: number).for: (cb: (index: number, cbBreak: () => void) => void): void`
-
-`countFromTo(from: number, to: number).map: <T>(cb: (index: number, cbBreak: () => void) => T): T[]`
-
+`count/countFromTo(countTo: number).reduce: <T = any>(cb: (acc: T, index: number) => T, initialValue: T): T`
